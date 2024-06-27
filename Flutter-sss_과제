@@ -1,0 +1,151 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: true,
+      home: login(),
+    );
+  }
+}
+
+class login extends StatefulWidget {
+  const login({super.key});
+
+  @override
+  State<login> createState() => _loginState();
+}
+
+TextEditingController idpw = TextEditingController();
+TextEditingController Phonepw = TextEditingController();
+TextEditingController Pwpw = TextEditingController();
+String? Iderror;
+String? Phoneerror;
+String? Pwerror;
+
+class _loginState extends State<login> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "tlqkf",
+          style: TextStyle(color: Colors.amber),
+        ),
+        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            children: [
+              Image.network(
+                  "https://file.sarangbang.com/home/thumb/thumb.php?src=/_file/board/photo/20230113133027200771.jpg&w=500"),
+              TextField(
+                controller: idpw,
+                decoration: InputDecoration(
+                    label: Text("아이디"),
+                    border: OutlineInputBorder(),
+                    errorText: Iderror),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: Pwpw,
+                decoration: InputDecoration(
+                    label: Text("비밀번호"),
+                    border: OutlineInputBorder(),
+                    errorText: Iderror),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: Phonepw,
+                decoration: InputDecoration(
+                    label: Text("전화번호"),
+                    border: OutlineInputBorder(),
+                    errorText: Iderror),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                  width: 150,
+                  height: 70,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      String? id = idpw.text;
+                      String? Phone = Phonepw.text;
+                      String? pw = Pwpw.text;
+
+                      String Id = "ddung613";
+                      String PHONE = "01021121804";
+                      String PW = "rjsdn00613!";
+                      if (id.isEmpty) {
+                        setState(() {
+                          Iderror = "값이 없음";
+                        });
+                      } else if (Phone.isEmpty) {
+                        setState(() {
+                          Iderror = "값이 없음";
+                        });
+                      } else if (pw.isEmpty) {
+                        setState(() {
+                          Iderror = "값이 없음";
+                        });
+                      }
+                      if (id == Id && Phone == PHONE && pw == PW) {
+                        setState(() {
+                          id = null;
+                          Phone = null;
+                          pw = null;
+                        });
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Pack()));
+                      }
+                    },
+                    child: Text(
+                      "로그인",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent),
+                  ))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Pack extends StatelessWidget {
+  const Pack({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.pinkAccent,
+        centerTitle: true,
+        title: Text(
+          "끝났다다다다ㅏㅏㅏ다다다다다다다다다다ㅏ",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Image.network(
+          "https://bareunnutri.com/files/attach/images/2022/09/27/da39727f684f1d3b14492fe9a4b9bacb.jpg"),
+      backgroundColor: Colors.blueAccent,
+    );
+  }
+}
