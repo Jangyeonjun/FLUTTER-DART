@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel ="stylesheet" href = "css/style.css" type = "text/css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous" defer = "defer"></script>
+	<script src = "js/script.js" defer = "defer"></script>
+    <link rel="stylesheet" href="ss.css">
+    <style>
+        .moving{
+        filter: brightness(90%);
+    position: relative;
+    bottom: 82px;
+    width: 100%;
+    height: 500px;
+    background:url('movebg.png') 0 center /500px repeat-x  ;
+    animation: movebg 1s linear infinite;
+}
+
+@keyframes movebg{
+    0%{background-position:0  ;}
+    100%{background-position: -500px ;}
+}
+    </style>
+</head>
+<body>
+	<div class="top">
+        <img src="2256138.png" alt="이미지" width="130px" >
+        <a href="#"><button>Play</button></a>
+    </div>
+    <div class="div">
+        <header class="header">
+            <ul class="main">
+                <li>
+                    <a href="#">아</a>						
+                    <ul class='sub'>
+                        <li><a href="#">아</a></li>
+                        <li><a href="#">아</a></li>
+                        <li><a href="#">아</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아</a>						
+                </li>
+                <li>
+                    <a href="#">아</a>						
+                    <ul class='sub'>
+                        <li><a href="#">아</a></li>
+                        <li><a href="#">아</a></li>
+                        <li><a href="#">아</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아</a>						
+                </li>
+                <li>
+                    <a href="#">아</a>						
+                </li>
+                <li>
+                    <a href="#">Members</a>						
+                    <ul class='sub'>
+                        <li onclick="winOpen1()"><a href="#">로그인</a></li>
+                        <li onclick="winOpen1()"><a href="#">회원가입 클릭</a></li>
+                    </ul>
+                </li>					
+            </ul>
+        </header>
+    </div>
+    <div class="moving"></div>
+
+    <div class="section">
+        <div class="bikeicon">
+            <img src="화면 캡처 2024-07-05 142655.png"  class="img_4" width="400px">
+            <img src="화면 캡처 2024-07-05 140517.png" class="tire01 tire-rotate" width="60px">
+            <img src="화면 캡처 2024-07-05 140517.png" class="tire02 tire-rotate" width="60px">
+        </div>
+    </div>
+</body>
+</html>
